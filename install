@@ -32,7 +32,7 @@ download() {
   mkdir -p $lib
   mkdir -p $bin
 
-  cp -R `pwd` $lib/
+  cp -R $dir/ $lib/dots/
 }
 
 
