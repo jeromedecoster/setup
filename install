@@ -41,5 +41,4 @@ download() {
 #
 
 check_sudo
-echo nono
 download
