@@ -1,0 +1,23 @@
+{
+  "name": "dots",
+  "version": "1.0.0",
+  "description": "dots",
+  "readme": "dots",
+  "main": "index.js",
+  "dependencies": {
+    "manh": "jeromedecoster/manh"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromedecoster/setup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeromedecoster/setup/issues"
+  },
+  "homepage": "https://github.com/jeromedecoster/setup#readme"
+}
