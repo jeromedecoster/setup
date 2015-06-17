@@ -1,6 +1,44 @@
 #!/bin/bash
 
-dir=`mktemp -d /tmp/dots.XXXXX`
-cd $dir
-curl -sSL github.com/jeromedecoster/dots/archive/master.tar.gz | tar x --strip 1
-bash install
+#
+# Write colored output
+#
+
+cyan() {
+  echo -e "\033[0;36m$1\033[0m"
+}
+
+#
+# Ask for sudo access if not already available
+# Note: use `sudo -k` to loose sudo access
+#
+
+check_sudo() {
+  echo "check `cyan sudo`..."
+  # without sudo access return nothing
+  if [[ -z `sudo -n uptime 2>/dev/null` ]]; then
+    # sudo prompt
+    sudo echo >/dev/null
+  fi
+}
+
+download() {
+  dir=`mktemp -d /tmp/dots.XXXXX`
+  cd $dir
+  curl -sSL github.com/jeromedecoster/dots/archive/master.tar.gz | tar x --strip 1
+# bash install
+  lib=/usr/local/lib
+  bin=/usr/local/bin
+  mkdir -p $lib
+  mkdir -p $bin
+
+  cp -R `pwd` $lib/
+}
+
+
+#
+# Run this script
+#
+
+check_sudo
+download
