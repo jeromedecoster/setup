@@ -36,7 +36,7 @@ download() {
 
   ln -s $lib/dots/install $bin/dots
 
-  rm $dir
+  rm -rf $dir
 }
 
 
