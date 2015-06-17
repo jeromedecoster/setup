@@ -4,8 +4,22 @@
 # Write colored output
 #
 
+red() {
+  echo -e "\033[0;31m$1\033[0m"
+}
 cyan() {
   echo -e "\033[0;36m$1\033[0m"
+}
+
+#
+# Abort with an exit message
+#
+
+abort() {
+  echo "`red abort:` $1"
+  # ring
+  echo -en "\007"
+  exit 1
 }
 
 #
