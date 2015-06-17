@@ -34,7 +34,7 @@ download() {
 
   cp -R $dir/ $lib/dots/
 
-  ln -s $lib/dots/install $bin/dots
+  ln -fs $lib/dots/install $bin/dots
 
   rm -rf $dir
 }
