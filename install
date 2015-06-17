@@ -22,13 +22,14 @@ check_sudo() {
   fi
 }
 
-download() {
-  dir=`mktemp -d /tmp/dots.XXXXX`
+install() {
+  echo "install `cyan dots`..."
+  local dir=`mktemp -d /tmp/dots.XXXXX`
   cd $dir
   curl -sSL github.com/jeromedecoster/dots/archive/master.tar.gz | tar x --strip 1
-# bash install
-  lib=/usr/local/lib
-  bin=/usr/local/bin
+  
+  local lib=/usr/local/lib
+  local bin=/usr/local/bin
   mkdir -p $lib
   mkdir -p $bin
 
@@ -37,6 +38,8 @@ download() {
   ln -fs $lib/dots/install $bin/dots
 
   rm -rf $dir
+
+  bash $lib/dots/install
 }
 
 
@@ -45,4 +48,4 @@ download() {
 #
 
 check_sudo
-download
+install
