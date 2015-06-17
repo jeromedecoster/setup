@@ -1,0 +1,3 @@
+dir=`mktemp -d /tmp/dots.XXXXX`
+cd $dir
+curl -sSL github.com/jeromedecoster/dots/archive/master.tar.gz | tar x --strip 1
