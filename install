@@ -37,6 +37,8 @@ install() {
 
   ln -fs $lib/dots/install $bin/dots
 
+  # prevent the following error
+  # shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
   cd ..
   rm -rf $dir
 
