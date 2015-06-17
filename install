@@ -37,9 +37,10 @@ install() {
 
   ln -fs $lib/dots/install $bin/dots
 
+  cd $lib/dots
   rm -rf $dir
 
-  bash $lib/dots/install
+  bash install
 }
 
 
