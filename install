@@ -60,7 +60,7 @@ install() {
   cd ..
   rm -rf $dir
 
-  bash $lib/dots/install
+  bash $lib/dots/update
 }
 
 
