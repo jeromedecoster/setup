@@ -53,7 +53,7 @@ install() {
   cp -R $dir/ $lib/dots/
 
   rm -f $bin/dots
-  ln -s $lib/dots/install $bin/dots
+  ln -s $lib/dots/dots $bin/dots
 
   # prevent the following error
   # shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
