@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
 # Write colored output
@@ -49,9 +49,11 @@ install() {
   mkdir -p $lib
   mkdir -p $bin
 
+  rm -rf $lib/dots
   cp -R $dir/ $lib/dots/
 
-  ln -fs $lib/dots/install $bin/dots
+  rm -f $bin/dots
+  ln -s $lib/dots/install $bin/dots
 
   # prevent the following error
   # shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
